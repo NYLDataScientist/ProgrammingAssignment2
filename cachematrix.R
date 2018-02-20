@@ -1,12 +1,13 @@
 ## Below are two functions that are used to create a special object that stores a matrix and caches its inverse.
 ## The <<- operator can be used to assign a value to an object in an environment that is different from the current environment. 
 
-## The first function, makeCacheMatrix creates a special "matrix", which is really a list containing a function to do the following four tasks:
+## The first function, makeCacheMatrix creates a special "matrix", 
+## which is really a list containing a function to do the following four tasks:
 
-## * set the value of the vector
-## * get the value of the vector
-## * set the value of the mean
-## * get the value of the mean
+## (1) set the value of the vector
+## (2) get the value of the vector
+## (3) set the value of the mean
+## (4) get the value of the mean
 
 makeCacheMatrix <- function(x = matrix()) {
     inverse <- NULL
@@ -23,7 +24,6 @@ makeCacheMatrix <- function(x = matrix()) {
     
 }
 
-## Write a short comment describing this function
 ## The following function cacheSolve calculates the inverse of the special "matrix" created with the above function. 
 ## However, it first checks to see if the inverse has already been calculated. 
 ## If so, it gets the inverse from the cache and skips the computation. 
